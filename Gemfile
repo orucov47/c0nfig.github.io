@@ -4,8 +4,8 @@ source "https://rubygems.org"
 
 gem "jekyll-theme-chirpy", "~> 7.2", ">= 7.2.4"
 
-# html-proofer sadece lokal test içinse, Cloudflare'da gereksiz => kaldır
-# gem "html-proofer", "~> 5.0", group: :test
+# html-proofer'ı test grubundan çıkaralım, global olarak yüklenmesi gerekebilir
+gem "html-proofer", "~> 5.0"
 
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
