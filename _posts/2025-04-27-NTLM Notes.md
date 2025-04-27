@@ -122,7 +122,7 @@ First, let's run our Responder tool in poison mode.
 ➜  ~ sudo responder -I eth0                        
 ```
 
-<figure><img src="../assets/img/İsimsiz video ‐ Clipchamp ile yapıldı.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../assets/img/responder_video.gif" alt=""><figcaption></figcaption></figure>
 
 Now, let's explain how this mechanism works.
 
