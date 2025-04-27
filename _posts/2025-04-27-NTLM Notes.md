@@ -12,12 +12,12 @@ image: assets/img/ntlm_header.jpg
 In today's blog post, we will cover questions such as what NTLM is, what it is used for, along with their answers.
 
 ### What is the NTLM?
-NTLM (NT LAN Manager) is an authentication protocol developed by Microsoft for Windows systems.  
-It should not be considered a standalone security layer/
-Instead, it acts as an authentication mechanism that other protocols—such as *SMB*, *RDP*, or *HTTP*—can rely on when they need to verify a user's identity.  
+NTLM (NT LAN Manager) is an authentication protocol developed by Microsoft for Windows systems.
+It should not be considered a standalone security layer.
+Instead, it acts as an authentication mechanism that other protocols—such as *SMB*, *RDP*, or *HTTP*—can rely on when they need to verify a user's identity.
 You can think of NTLM as a service that other protocols call upon to handle authentication behind the scenes.
-NTLMv1 was introduced in the early 1990s with Windows NT 3.1.  
-Due to security weaknesses, NTLMv2 was released in 1996, offering stronger protection against attacks like replay and brute-force.  
+NTLMv1 was introduced in the early 1990s with Windows NT 3.1.
+Due to security weaknesses, NTLMv2 was released in 1996, offering stronger protection against attacks like replay and brute-force.
 Today, NTLMv1 is considered obsolete, and NTLMv2 is the minimum recommended version
 
 
@@ -29,21 +29,21 @@ Today, NTLMv1 is considered obsolete, and NTLMv2 is the minimum recommended vers
 <figure><img src="../assets/img/NTLM_AUTH_MECHANISM_1.png" alt=""><figcaption></figcaption></figure>
 
 #### 1.Negotiate Message
-I tried to support what we have written with a diagram.  
-Now, let's first take a look at what happens on both the client and server sides during NTLM authentication.  
-At the beginning of the NTLM authentication process, the client sends a *hello* message to the server.  
+I tried to support what we have written with a diagram.
+Now, let's first take a look at what happens on both the client and server sides during NTLM authentication.
+At the beginning of the NTLM authentication process, the client sends a *hello* message to the server.
 During this initial communication, the client indicates which NTLM version it supports, laying the groundwork for the authentication process.
 The message sent is referred to as the 'Negotiate Message' or 'Type 1 Message'.
 
 #### 2.Chanllenge Response
-Then, the server sees the 'hello' message and responds.  
-If the client's NTLM version is compatible with the server's version, the server responds and asks the client to prove its identity.  
-The server also sends a unique challenge called the 'ServerChallenge'.  
-At this point, the client is required to use the ServerChallenge to prove its identity.  
+Then, the server sees the 'hello' message and responds.
+If the client's NTLM version is compatible with the server's version, the server responds and asks the client to prove its identity.
+The server also sends a unique challenge called the 'ServerChallenge'.
+At this point, the client is required to use the ServerChallenge to prove its identity.
 The presence of the ServerChallenge helps prevent replay attacks, especially when using NTLMv2. NTLMv2’s challenge-response mechanism provides stronger security because it uses complex hashes and additional information.
 This part is known as the 'Challenge-Response' or 'Type 2 Message'.
 
-At this point, we can practically analyze the server's Challenge-Response message.  
+At this point, we can practically analyze the server's Challenge-Response message.
 Although there are many tools available, I will use the DUMPNTLMinfo tool, which comes embedded with Impacket in Kali Linux, to do this.
 
 ```zsh
@@ -66,20 +66,20 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 [+] Null Session    : False
 ```
 
-I've explained this with my own non-domain PC, but testing with domain-connected devices would be better.  
+I've explained this with my own non-domain PC, but testing with domain-connected devices would be better. 
 As we can see, we came across a lot of information. Let's try to explain what a few of these mean:
 
-1. **[+] SMBv1 Enabled : False**  
-    It's good news that this outdated protocol is not enabled. Or is it bad? I'm not sure; is your job about exploiting or protecting? Ahahaha!
+1. **[+] SMBv1 Enabled : False**
+    It's good news that this outdated protocol is not enabled. Or is it bad? I'm not sure; is your job about exploiting or protecting? Ahahaha
     
-2. **[+] Server Security : SIGNING_ENABLED (not required)**  
-    Here we have both good and bad news from a security perspective.  
-    Let's say our server supports signing, which is good. However, the "not required" part is bad.  
+2. **[+] Server Security : SIGNING_ENABLED (not required)**
+    Here we have both good and bad news from a security perspective.
+    Let's say our server supports signing, which is good. However, the "not required" part is bad.
     This means communication is possible even without signing.
     
-3. **[+] Null Session : False**  
-    With a null session, we could gather information about some shares and domain settings (user groups, password policy, etc.).  
-    It's good that this is disabled.  
+3. **[+] Null Session : False**
+    With a null session, we could gather information about some shares and domain settings (user groups, password policy, etc.).
+    It's good that this is disabled.
     Besides, information about the OS, NDS name, and NETBIOS could also be obtained.
 
 
