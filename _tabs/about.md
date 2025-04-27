@@ -20,7 +20,6 @@ IT professional transitioning into cybersecurity | System Administrator | Penetr
 - Vulnerability assessment & exploitation
 - Network security & hardening
 - Privilege escalation techniques
-- Security tooling (Metasploit, Burp Suite, Nmap, etc.)
 - Writing technical walkthroughs and guides
 
 ---
@@ -70,5 +69,4 @@ On my blog, I document:
 - Contribute to open-source security tools
 - Build a knowledge base for aspiring pentesters
 
-Let's connect and talk infosec!  
-📩 [tofiq.orucov1@outlook.com](mailto:.orucov1@outlook.com)
+
