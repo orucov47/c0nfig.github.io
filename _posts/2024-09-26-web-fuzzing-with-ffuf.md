@@ -4,6 +4,8 @@ title: "Ffuf"
 categories: [Toolset & Technique]
 date: 2024-09-26
 tags: [enumeration, fuzzing, parameter, bruteforce]
+image: /assets/img/ffuf_header.png
+
 ---
 
 # Web Fuzzing with ffuf

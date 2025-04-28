@@ -4,6 +4,7 @@ title: "Pivoting"
 categories: [Toolset & Technique]
 date: 2024-11-23
 tags: [ligolo, double pivot, reverse shell, netcat]
+image: /assets/img/pivoting_header.png
 ---
 # Pivoting and ligolo-ng
 

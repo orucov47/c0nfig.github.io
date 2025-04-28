@@ -8,7 +8,11 @@ order: 4
 
 ## Hi, I'm Tofig Orujov 👋
 
-IT professional transitioning into cybersecurity | System Administrator | Penetration Testing Enthusiast
+#### IT Professional Transitioning into Cybersecurity
+
+_**System Administrator**_  
+_**Penetration Testing Enthusiast**_
+
 
 **Contact:**  
 📧 [tofiq.orucov1@outlook.com](mailto:tofiq.orucov1@outlook.com)  
