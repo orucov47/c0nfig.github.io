@@ -2,8 +2,8 @@
 layout: post
 title: "Reflection"
 categories: [VulnLab]
-date: 2025-05-03
-tags: [rbcs, GenericAll, mssql, Reuse, relaying]
+date: 2025-05-04
+tags: [rbcd, GenericAll, mssql, Reuse, relaying]
 image: assets/img/reflection_slide.png
 ---
 
@@ -53,14 +53,11 @@ db=staging%
 Check with netexec to see which machine it applies to.
 
 ```zsh
-➜  ms01 netexec smb ../reflection.ip -u web_staging -p <REDACTED>
-SMB         10.10.156.101   445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:reflection.vl) (signing:False) (SMBv1:False)
-SMB         10.10.156.102   445    MS01             [*] Windows Server 2022 Build 20348 x64 (name:MS01) (domain:reflection.vl) (signing:False) (SMBv1:False)
-SMB         10.10.156.103   445    WS01             [*] Windows 10 / Server 2019 Build 19041 x64 (name:WS01) (domain:reflection.vl) (signing:False) (SMBv1:False)
-SMB         10.10.156.101   445    DC01             [-] reflection.vl\web_staging:<REDACTED> STATUS_LOGON_FAILURE 
-SMB         10.10.156.102   445    MS01             [+] reflection.vl\web_staging:<REDACTED> (Guest)
-SMB         10.10.156.103   445    WS01             [-] reflection.vl\web_staging:<REDACTED> STATUS_LOGON_FAILURE 
-Running nxc against 3 targets ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+➜  ms01 netexec mssql ../reflection.ip -u web_staging -p <REDACTED> --local-auth
+MSSQL       10.10.156.102   1433   MS01             [*] Windows Server 2022 Build 20348 (name:MS01) (domain:reflection.vl)
+MSSQL       10.10.156.101   1433   DC01             [*] Windows Server 2022 Build 20348 (name:DC01) (domain:reflection.vl)
+MSSQL       10.10.156.102   1433   MS01             [+] MS01\web_staging:<REDACTED> 
+MSSQL       10.10.156.101   1433   DC01             [-] DC01\web_staging:<REDACTED> (Login failed for user 'web_staging'. Please try again with or without '--local-auth')
 ```
 
 Connect to ms01
