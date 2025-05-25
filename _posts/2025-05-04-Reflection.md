@@ -212,10 +212,10 @@ When checking the machine account quota, we noticed it's set to 0, which is bad 
 
 
 ```zsh
-➜  ms01 netexec ldap dc01 -u dorothy.rose -p hC_fny3OK9glSJ -M maq                          
+➜  ms01 netexec ldap dc01 -u dorothy.rose -p <REDACTED> -M maq                          
 
 SMB         10.10.219.181   445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:reflection.vl) (signing:False) (SMBv1:False)
-LDAP        10.10.219.181   389    DC01             [+] reflection.vl\dorothy.rose:hC_fny3OK9glSJ 
+LDAP        10.10.219.181   389    DC01             [+] reflection.vl\dorothy.rose:<REDACTED> 
 MAQ         10.10.219.181   389    DC01             [*] Getting the MachineAccountQuota
 MAQ         10.10.219.181   389    DC01             MachineAccountQuota: 0
 ```
@@ -309,9 +309,9 @@ We check the Georgia.Price user in BloodHound and see that they have GenericAll 
 We check again if we can read LAPS, but this time it doesn't work.
 
 ```zsh
-➜  ms01 netexec ldap dc01 -u Georgia.Price -p 'DBl+5MPkpJg5id' -M laps 
+➜  ms01 netexec ldap dc01 -u Georgia.Price -p <REDACTED> -M laps 
 SMB         10.10.219.181   445    DC01             [*] Windows Server 2022 Build 20348 x64 (name:DC01) (domain:reflection.vl) (signing:False) (SMBv1:False)
-LDAP        10.10.219.181   389    DC01             [+] reflection.vl\Georgia.Price:DBl+5MPkpJg5id 
+LDAP        10.10.219.181   389    DC01             [+] reflection.vl\Georgia.Price:<REDACTED>
 LAPS        10.10.219.181   389    DC01             [*] Getting LAPS Passwords
 LAPS        10.10.219.181   389    DC01             [-] No result found with attribute ms-MCS-AdmPwd or msLAPS-Password !
 ```
