@@ -1,18 +1,24 @@
 #  The contact options.
 
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@xpp_az"
+
+
 - type: github
   icon: "fab fa-github"
 
-- type: twitter
-  icon: "fa-brands fa-x-twitter"
 
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+
+- type: linkedin
+  icon: 'fab fa-linkedin'
+  url: 'www.linkedin.com/in/tofiq-orucov-a3b20723a'
+
+
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
