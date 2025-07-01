@@ -24,7 +24,7 @@ _**Penetration Testing Enthusiast**_
 - Vulnerability assessment & exploitation
 - Network security & hardening
 - Privilege escalation techniques
-- Writing technical walkthroughs and guides
+- Writing technical walkthroughs and guidesa
 
 ---
 
