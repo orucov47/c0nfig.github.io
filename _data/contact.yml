@@ -11,12 +11,14 @@
 
 - type: email
   icon: "fas fa-envelope"
-  noblank: true # open link in current tab
+  noblank: true  # open link in current tab
+  url: "mailto:tofiq.orucov001@gmail.com"
+
 
 
 - type: linkedin
   icon: 'fab fa-linkedin'
-  url: 'www.linkedin.com/in/tofiq-orucov-a3b20723a'
+  url: 'https://www.linkedin.com/in/tofiq-orucov-a3b20723a'
 
 
 # Uncomment and complete the url below to enable more contact options
