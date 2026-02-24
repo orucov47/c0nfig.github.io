@@ -16,14 +16,14 @@ timezone:
 
 title: Tofiq's blog # the main title
 
-tagline: WriteUp, Pentest notes # it will display as the subtitle
+tagline: Security Stuff # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://c0nfig.github.io"
+url: "https://t0x2f.xyz"
 
 github:
   username: github_username # change to your GitHub username
